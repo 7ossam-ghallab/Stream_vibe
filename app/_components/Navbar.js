@@ -1,21 +1,18 @@
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import styles from './Navbar.module.css';
+import {useState} from "react";
+import Link from "next/link";
+import styles from "./Navbar.module.css";
 
-import Image from 'next/image';
-import Logo from '../public/images/Logo.svg';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen)
+    console.log(isOpen);
   };
-
-
 
   return (
     <nav className={styles.navbar}>
@@ -26,12 +23,17 @@ const Navbar = () => {
       </div>
 
       <div className={styles.logo}>
-        <Link href="/"><Image src={Logo} alt='logo'/></Link>
+        <Link href="/">
+          <img src="/Logo.svg" alt="logo" />
+        </Link>
       </div>
 
-      <ul className={styles.navLinks} style={isOpen ?{left: "0"} : {left:'-100%'}}>
+
+      <ul className={styles.navLinks} style={isOpen ? {left: "0"} : {left: "-100%"}}>
         <li>
-          <Link href="/" className={styles.active}>Home</Link>
+          <Link href="/" className={styles.active}>
+            Home
+          </Link>
         </li>
         <li>
           <Link href="/about">About</Link>
@@ -52,8 +54,6 @@ const Navbar = () => {
           <Link href="/register">Register</Link>
         </li>
       </ul>
-
-      
 
       {/* القائمة الجانبية */}
       {/* <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>

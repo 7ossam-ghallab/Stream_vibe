@@ -1,19 +1,19 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import './globals.css'
+import "./_styles/globals.css";
+import Footer from "./_components/Footer";
+import Navbar from "./_components/Navbar";
 
-const Layout = ({ children }) => {
+export const metadata = {
+  title: "Stream Vibe",
+};
+
+export default function RootLayout({children}) {
   return (
-    <html>
-      <body>
-        <div className="flex flex-col min-h-screen w-full">
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+    <html lang="en">
+      <body className="bg-black-8">
+        <Navbar />
+        <main className="mx-4 sm:mx-[6%]">{children}</main>
+        <Footer />
       </body>
     </html>
   );
-};
-
-export default Layout;
+}
